@@ -1,3 +1,5 @@
+#include <fstream>
+
 class Rectangle
 {
 private:
@@ -10,4 +12,6 @@ public:
     Rectangle(int r_width, int r_height);
 
     void printData();
+
+    void writeToFile(std::ofstream &file);
 };

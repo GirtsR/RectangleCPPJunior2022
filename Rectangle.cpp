@@ -17,3 +17,7 @@ void Rectangle::printData() {
     std::cout << "Area: " << area << std::endl;
     std::cout << "Is even: " << isEvenArea() << std::endl;
 }
+
+void Rectangle::writeToFile(std::ofstream &file) {
+    file << width << " " << height << " " << area << " " << isEvenArea() << std::endl;
+}

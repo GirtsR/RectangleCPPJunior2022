@@ -1,16 +1,32 @@
 #include <iostream>
+#include <vector>
+#include <fstream>
 #include "Rectangle.h"
 
 int main(int, char**) {
-    int width, height;
+    int n;
+    std::cout << "Enter rectangle count: ";
+    std::cin >> n;
 
-    std::cout << "Please enter the width of the rectangle: ";
-    std::cin >> width;
+    std::vector<Rectangle> rectangle_vector;
 
-    std::cout << "Please enter the height of the rectangle: ";
-    std::cin >> height;
+    for (int i = 0; i < n; i++) {
+        int width, height;
 
-    Rectangle my_rectangle(width, height);
+        std::cout << "Please enter the width of the rectangle " << i + 1 << ": ";
+        std::cin >> width;
 
-    my_rectangle.printData();
+        std::cout << "Please enter the height of the rectangle " << i + 1 << ": ";
+        std::cin >> height;
+
+        Rectangle my_rectangle(width, height);
+        rectangle_vector.push_back(my_rectangle);
+    }
+
+    std::ofstream outfile("../out.txt");
+
+    for (auto rectangle : rectangle_vector) {
+        rectangle.printData();
+        rectangle.writeToFile(outfile);
+    }
 }
