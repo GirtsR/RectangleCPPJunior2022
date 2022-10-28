@@ -14,4 +14,10 @@ public:
     void printData();
 
     void writeToFile(std::ofstream &file);
+
+    int getWidth();
+
+    int getHeight();
+
+    int getArea();
 };

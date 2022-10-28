@@ -21,3 +21,15 @@ void Rectangle::printData() {
 void Rectangle::writeToFile(std::ofstream &file) {
     file << width << " " << height << " " << area << " " << isEvenArea() << std::endl;
 }
+
+int Rectangle::getWidth() {
+    return width;
+}
+
+int Rectangle::getHeight() {
+    return height;
+}
+
+int Rectangle::getArea() {
+    return area;
+}
